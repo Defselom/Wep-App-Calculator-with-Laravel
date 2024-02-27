@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="">
-    <h2>Page 2</h2>
+    <h2>Page 3</h2>
 <div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus libero at rem voluptas ipsam, eligendi deserunt porro id modi illum odio quo officia cum, dolore illo commodi voluptate ea? Officia.
     Amet consequatur quisquam autem sint eligendi! Repellat porro quod molestias minima magnam reiciendis, est itaque repellendus voluptatem numquam iure nemo temporibus perferendis omnis consequatur! Nam voluptatibus assumenda voluptatum dolorem officiis!
