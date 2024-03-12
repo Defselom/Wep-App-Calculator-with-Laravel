@@ -80,7 +80,7 @@ class operationController extends Controller
 
 
 
-        $operation = "Addition";
+        $operation = "Multiplication";
         $number1 = $request->input('number1');
         $number2 = $request->input('number2');
 
@@ -110,20 +110,27 @@ class operationController extends Controller
             'number2.required' => 'Le champ Nombre 2 est requis.',
             'number2.numeric' => 'Le champ Nombre 2 doit être un nombre.',
         ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator) 
-                ->withInput(); 
-        }
-
-        $operation = "Division";
         $number1 = $request->input('number1');
         $number2 = $request->input('number2');
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($number2 === 0) {
+            return redirect()->back()
+                ->withErrors(['number2' => 'La division par zéro est impossible.'])
+                ->withInput();
+          }else{
+             if($validator->fails()) {
+                     return redirect()->back()
+                                    ->withErrors($validator) 
+                                    ->withInput(); 
+                    }
+                        }
+        $operation = "Division";
 
+        if ($number2 != 0) {
         $resultat = $number1 / $number2;
+    } else {
+        $resultat = "Impossible de diviser par zéro";
+    }
 
         return view('Resultat', compact('number1', 'number2', 'operation', 'resultat'));
     }
