@@ -33,4 +33,11 @@ class operationController extends Controller
         return view('Soustraction');
     }
 
+
+    // Resultat
+    public function showResultat(): View
+    {
+        return view('Resultat');
+    }
+
 }

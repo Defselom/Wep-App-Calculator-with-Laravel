@@ -20,18 +20,10 @@ Route::get('/', function () {
 
 Route::get('/Addition', [operationController::class, 'showAddition']);
 
-Route::get('/Soustraction', function () {
-    return view('Soustraction');
-});
+Route::get('/Soustraction', [operationController::class, 'showSoustraction']);
 
-Route::get('/Division', function () {
-    return view('Division');
-});
+Route::get('/Division', [operationController::class, 'showDivision']);
 
-Route::get('/Multiplication', function () {
-    return view('Multiplication');
-});
+Route::get('/Multiplication', [operationController::class, 'showMultiplication']);
 
-Route::get('/Resultat', function () {
-    return view('Resultat');
-});
+Route::get('/Resultat', [operationController::class, 'showResultat']);
