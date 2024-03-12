@@ -14,13 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('page1');
+    return view('home');
 });
 
-Route::get('/page2', function () {
-    return view('page2');
+Route::get('/Addition', function () {
+    return view('Addition');
 });
 
-Route::get('/page3', function () {
-    return view('page3');
+Route::get('/Soustraction', function () {
+    return view('Soustraction');
+});
+
+Route::get('/Division', function () {
+    return view('Division');
+});
+
+Route::get('/Multiplication', function () {
+    return view('Multiplication');
+});
+
+Route::get('/Resultat', function () {
+    return view('Resultat');
 });
