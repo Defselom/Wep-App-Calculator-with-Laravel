@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\operationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('page1');
+    return view('Home');
 });
 
-Route::get('/page2', function () {
-    return view('page2');
-});
+Route::get('/Addition', [operationController::class, 'showAddition']);
 
-Route::get('/page3', function () {
-    return view('page3');
-});
+Route::get('/Soustraction', [operationController::class, 'showSoustraction']);
+
+Route::get('/Division', [operationController::class, 'showDivision']);
+
+Route::get('/Multiplication', [operationController::class, 'showMultiplication']);
+
+Route::get('/ProcessingAddition', [operationController::class, 'makeAddition'])->name('makeAddition');
+
+
+Route::get('/Resultat', [operationController::class, 'showResultat'])->name('Resultat');
+
