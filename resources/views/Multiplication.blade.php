@@ -5,11 +5,26 @@
 <div class="">
     <h2 class="text-center w-full font-bold">Multiplication</h2>
 <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus libero at rem voluptas ipsam, eligendi deserunt porro id modi illum odio quo officia cum, dolore illo commodi voluptate ea? Officia.
-    Amet consequatur quisquam autem sint eligendi! Repellat porro quod molestias minima magnam reiciendis, est itaque repellendus voluptatem numquam iure nemo temporibus perferendis omnis consequatur! Nam voluptatibus assumenda voluptatum dolorem officiis!
-    A, eius fugiat! Aut nisi doloribus autem ex voluptas cum officiis, dolorum reprehenderit culpa eveniet aliquam temporibus doloremque quidem magni nobis, beatae vitae optio voluptates fugiat! Neque non culpa numquam!
-    Beatae iusto omnis aspernatur tenetur perferendis nisi officiis nesciunt tempora inventore, quaerat, earum error temporibus ea, expedita illo mollitia? Obcaecati voluptatum a culpa quae. Fugiat molestias at fuga quia distinctio?
-    Sapiente perspiciatis iusto id ratione aperiam distinctio animi rerum minus minima, quisquam odio deleniti ipsam at, sit illum eaque omnis debitis recusandae quas placeat, reiciendis atque tempore facere quibusdam. Tempore.
+   
+<form action="{{ route('makeMultiplication')}}" method="get" class="max-w-sm mx-auto ">
+    @csrf
+    <div class="mb-5">
+      <label for="number1" class="block mb-2 text-sm font-medium text-black ">Nombre 1</label>
+      <input type="text" id="number1" name="number1" value="{{ old('number1') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex: 12" required />
+      @error('number1')
+  <span class="text-red-500">{{ $message}}</span>
+@enderror
+    </div>
+    <div class="mb-5">
+        <label for="number2" class="block mb-2 text-sm font-medium text-black">Nombre 2</label>
+        <input type="text" id="number2" name="number2" value="{{ old('number2') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex: 10" required />
+        @error('number2')
+  <span class="text-red-500">{{ $message }}</span>
+@enderror
+      </div>
+  
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Calculer</button>
+  </form>
 </div>
 </div>
 
