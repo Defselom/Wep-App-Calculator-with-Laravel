@@ -15,6 +15,9 @@
   <span class="text-red-500">{{ $message}}</span>
 @enderror
     </div>
+    <div class="flex justify-center items-center ]">          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+
+    </div>
     <div class="mb-5">
         <label for="number2" class="block mb-2 text-sm font-medium text-black">Nombre 2</label>
         <input type="text" id="number2" name="number2" value="{{ old('number2') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex: 10" required />
