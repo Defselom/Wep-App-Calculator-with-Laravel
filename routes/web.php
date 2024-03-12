@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\operationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/Addition', function () {
-    return view('Addition');
-});
+Route::get('/Addition', [operationController::class, 'showAddition']);
 
 Route::get('/Soustraction', function () {
     return view('Soustraction');
