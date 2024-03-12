@@ -27,7 +27,9 @@ Route::get('/Division', [operationController::class, 'showDivision']);
 Route::get('/Multiplication', [operationController::class, 'showMultiplication']);
 
 Route::get('/ProcessingAddition', [operationController::class, 'makeAddition'])->name('makeAddition');
-
+Route::get('/ProcessingDivision', [operationController::class, 'makeDivision'])->name('makeDivision');
+Route::get('/ProcessingMultiplication', [operationController::class, 'makeMultiplication'])->name('makeMultiplication');
+Route::get('/ProcessingSoustraction', [operationController::class, 'makeSoustraction'])->name('makeSoustraction');
 
 Route::get('/Resultat', [operationController::class, 'showResultat'])->name('Resultat');
 
