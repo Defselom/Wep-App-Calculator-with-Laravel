@@ -1,0 +1,34 @@
+@php
+$number1 ??  null;
+$number2 ??  null;
+$action ?? '';
+$method ?? 'get';
+$operation ?? '';
+@endphp
+
+
+<div>
+    {{-- <h1>{{$operation}}</h1> --}}
+    <form action="{{$action}}" method="{{$method}}" class="max-w-sm mx-auto ">
+        @csrf
+        <div class="mb-5">
+          <label for="number1" class="block mb-2 text-sm font-medium text-black ">Nombre 1</label>
+          <input type="text" id="number1" name="number1" value="{{ old('number1') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex: 12" required />
+          @error('number1')
+      <span class="text-red-500">{{ $message}}</span>
+    @enderror
+        </div>
+        <div class="flex justify-center items-center ]">    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        </div>
+        <div class="mb-5">
+            <label for="number2" class="block mb-2 text-sm font-medium text-black">Nombre 2</label>
+            <input type="text" id="number2" name="number2" value="{{ old('number2') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex: 10" required />
+            @error('number2')
+      <span class="text-red-500">{{ $message }}</span>
+    @enderror
+          </div>
+      
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Calculer</button>
+      </form>
+
+    </div>
