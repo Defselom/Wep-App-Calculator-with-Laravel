@@ -4,11 +4,29 @@ $number2 ??  null;
 $action ?? '';
 $method ?? 'get';
 $operation ?? '';
-@endphp
 
+// the default svg is Addition svg
+$svg = '<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>';
+
+@endphp
+ {{-- save the operation Svg depends on operation value --}}
+@switch($operation)
+
+    @case("Multiplication")
+        <?php $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>' ?>
+    @break
+
+    @case("Soustraction")
+    <?php $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus"><path d="M5 12h14"/></svg>' ?>
+    @break
+
+    @case("Division")
+    <?php $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-divide"><circle cx="12" cy="6" r="1"/><line x1="5" x2="19" y1="12" y2="12"/><circle cx="12" cy="18" r="1"/></svg>' ?>
+    @break
+
+@endswitch
 
 <div>
-    {{-- <h1>{{$operation}}</h1> --}}
     <form action="{{$action}}" method="{{$method}}" class="max-w-sm mx-auto ">
         @csrf
         <div class="mb-5">
@@ -18,7 +36,8 @@ $operation ?? '';
       <span class="text-red-500">{{ $message}}</span>
     @enderror
         </div>
-        <div class="flex justify-center items-center ]">    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        <div class="flex justify-center items-center ]">    {!! $svg !!} 
+
         </div>
         <div class="mb-5">
             <label for="number2" class="block mb-2 text-sm font-medium text-black">Nombre 2</label>
